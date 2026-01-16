@@ -1,0 +1,12 @@
+.container { display: inline-flex; align-items: center; gap: 4px; }
+.stars { display: flex; }
+.star { color: #d1d5db; transition: color 0.2s; }
+.star.filled { color: #fbbf24; }
+.star.empty { color: #d1d5db; }
+.star.clickable { cursor: pointer; }
+.star.clickable:hover { color: #f59e0b; }
+.small .star { font-size: 14px; }
+.medium .star { font-size: 18px; }
+.large .star { font-size: 24px; }
+.count { color: #6b7280; font-size: 0.875rem; }
+.rating { color: #374151; font-weight: 600; margin-left: 4px; }

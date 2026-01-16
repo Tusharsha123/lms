@@ -1,0 +1,22 @@
+.main { max-width: 1000px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.count { color: #6b7280; font-size: 0.875rem; }
+.filters { margin-bottom: 24px; }
+.courseFilter { padding: 10px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 1rem; min-width: 200px; }
+.studentList { display: flex; flex-direction: column; gap: 16px; }
+.studentCard { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; }
+.studentInfo { display: flex; align-items: center; gap: 16px; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.avatarPlaceholder { width: 48px; height: 48px; border-radius: 50%; background: #6366f1; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.25rem; }
+.details h3 { font-size: 1rem; color: #1f2937; margin-bottom: 2px; }
+.details p { font-size: 0.875rem; color: #6b7280; margin: 0; }
+.courseName { color: #6366f1 !important; }
+.progress { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+.progress span { font-size: 0.75rem; color: #6b7280; }
+.meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.status { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 500; }
+.status.active { background: #d1fae5; color: #059669; }
+.status.completed { background: #dbeafe; color: #2563eb; }
+.date { font-size: 0.75rem; color: #9ca3af; }
+.empty { text-align: center; padding: 48px; color: #6b7280; }

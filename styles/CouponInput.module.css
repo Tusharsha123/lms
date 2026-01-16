@@ -1,0 +1,6 @@
+.container { width: 100%; }
+.inputGroup { display: flex; gap: 8px; }
+.input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-family: monospace; text-transform: uppercase; }
+.input:focus { outline: none; border-color: #6366f1; }
+.success { color: #10b981; font-size: 0.875rem; margin-top: 8px; }
+.error { color: #ef4444; font-size: 0.875rem; margin-top: 8px; }

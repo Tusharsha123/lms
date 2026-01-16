@@ -1,0 +1,26 @@
+.main { max-width: 800px; margin: 0 auto; padding: 24px; }
+.backLink { color: #6366f1; text-decoration: none; font-size: 0.875rem; display: block; margin-bottom: 24px; }
+.discussion { background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 32px; }
+.header { margin-bottom: 16px; }
+.badges { display: flex; gap: 8px; margin-bottom: 12px; }
+.pinned { font-size: 0.875rem; }
+.resolved { font-size: 0.75rem; color: #10b981; background: #d1fae5; padding: 4px 8px; border-radius: 4px; }
+.header h1 { font-size: 1.5rem; color: #1f2937; margin-bottom: 12px; }
+.meta { display: flex; justify-content: space-between; align-items: center; }
+.author { display: flex; align-items: center; gap: 8px; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; }
+.avatarPlaceholder { width: 32px; height: 32px; border-radius: 50%; background: #6366f1; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.instructorBadge { background: #eef2ff; color: #6366f1; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+.date { font-size: 0.75rem; color: #9ca3af; }
+.content { color: #374151; line-height: 1.7; white-space: pre-wrap; }
+.replies { margin-bottom: 32px; }
+.replies h2 { font-size: 1.25rem; color: #374151; margin-bottom: 16px; }
+.reply { background: #fff; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 12px; }
+.reply.answer { border-color: #10b981; background: #f0fdf4; }
+.reply.instructorReply { border-left: 3px solid #6366f1; }
+.answerBadge { display: inline-block; background: #10b981; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-bottom: 8px; }
+.replyHeader { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.replyContent { color: #374151; line-height: 1.6; white-space: pre-wrap; }
+.replyForm { background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; }
+.replyForm h3 { margin-bottom: 16px; }
+.replyForm textarea { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; resize: vertical; font-family: inherit; margin-bottom: 16px; }

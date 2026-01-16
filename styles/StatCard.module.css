@@ -1,0 +1,9 @@
+.card { display: flex; gap: 16px; padding: 20px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; align-items: center; }
+.icon { font-size: 2rem; }
+.content { flex: 1; }
+.title { font-size: 0.875rem; color: #6b7280; margin-bottom: 4px; }
+.value { font-size: 1.5rem; font-weight: 700; color: #1f2937; }
+.change { font-size: 0.75rem; font-weight: 500; }
+.change.positive { color: #10b981; }
+.change.negative { color: #ef4444; }
+.change.neutral { color: #6b7280; }

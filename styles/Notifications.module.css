@@ -1,0 +1,12 @@
+.main { max-width: 700px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.markAllBtn { background: none; border: none; color: #6366f1; cursor: pointer; font-size: 0.875rem; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.notification { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #fff; border-radius: 8px; border: 1px solid #e5e7eb; cursor: pointer; }
+.notification.unread { background: #eef2ff; border-color: #c7d2fe; }
+.content h3 { font-size: 1rem; color: #1f2937; margin-bottom: 4px; }
+.content p { font-size: 0.875rem; color: #6b7280; margin: 0; }
+.time { font-size: 0.75rem; color: #9ca3af; margin-top: 4px; }
+.link { color: #6366f1; text-decoration: none; font-size: 0.875rem; white-space: nowrap; }
+.empty { text-align: center; padding: 48px; color: #6b7280; }

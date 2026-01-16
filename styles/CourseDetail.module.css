@@ -1,0 +1,405 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.successBanner {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heroContent {
+  padding: 2rem 0;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.heroContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.students,
+.level {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.level {
+  background: var(--lighter);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.instructor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.instructor strong {
+  color: var(--primary);
+}
+
+.duration {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.heroSidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.enrollCard {
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.enrollContent {
+  padding: 1.5rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.enrolled {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.continueBtn,
+.editBtn {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.continueBtn:hover,
+.editBtn:hover {
+  background: var(--primary-dark);
+}
+
+.enrollBtn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--gray);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.tab:hover {
+  color: var(--primary);
+}
+
+.tab.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+.overview h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overview h3 {
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.overview p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.learningPoints {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.learningPoints li {
+  padding: 0.75rem 1rem;
+  background: var(--lighter);
+  border-radius: var(--radius-md);
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.learningPoints li::before {
+  content: '✓';
+  position: absolute;
+  left: 1rem;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.lessonList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lessonItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.lessonItem:hover {
+  background-color: var(--lighter);
+  border-color: var(--primary);
+}
+
+.lessonNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lessonInfo {
+  flex: 1;
+}
+
+.lessonInfo h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.lessonInfo span {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.startBtn {
+  padding: 0.5rem 1rem;
+  background: var(--lighter);
+  color: var(--primary);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.startBtn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.reviewsSection {
+  max-width: 800px;
+}
+
+.reviewsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ratingOverview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bigRating {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.reviewFormContainer {
+  background: var(--lighter);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.noReviews {
+  text-align: center;
+  color: var(--gray);
+  padding: 3rem;
+}
+
+.notFound {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroSidebar {
+    position: relative;
+    top: auto;
+    order: -1;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .learningPoints {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+
+  .tab {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+
+  .reviewsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .bigRating {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,11 @@
+.main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.backLink { color: #6366f1; text-decoration: none; font-size: 0.875rem; display: block; margin-bottom: 8px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.courseName { color: #6b7280; font-size: 0.875rem; }
+.list { display: flex; flex-direction: column; gap: 12px; }
+.empty { text-align: center; padding: 48px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; color: #6b7280; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 500; color: #374151; }
+.field textarea { padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; resize: vertical; font-family: inherit; }

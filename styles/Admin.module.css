@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+.main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.statIcon {
+  font-size: 3rem;
+}
+
+.statInfo h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.statInfo p {
+  color: var(--gray);
+  margin: 0;
+}
+
+.usersCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.usersTable {
+  overflow-x: auto;
+}
+
+.usersTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usersTable th {
+  background-color: var(--light);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.usersTable td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.usersTable tr:hover {
+  background-color: var(--lighter);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+.main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.progress { text-align: right; }
+.count { font-size: 1.5rem; font-weight: 700; color: #6366f1; }
+.label { font-size: 0.875rem; color: #6b7280; display: block; }
+.section { margin-bottom: 32px; }
+.section h2 { font-size: 1.25rem; color: #374151; margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.empty { color: #6b7280; padding: 24px; background: #f9fafb; border-radius: 8px; text-align: center; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

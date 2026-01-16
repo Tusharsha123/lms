@@ -1,0 +1,20 @@
+.main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.error { text-align: center; padding: 48px; }
+.error h1 { color: #1f2937; margin-bottom: 8px; }
+.error p { color: #6b7280; margin-bottom: 16px; }
+.certificate { background: #fff; padding: 48px; border-radius: 12px; border: 8px solid #1e3a5f; text-align: center; margin-bottom: 24px; }
+.header .label { font-size: 0.875rem; letter-spacing: 4px; color: #1e3a5f; }
+.title { font-size: 3rem; color: #c9a227; font-weight: normal; margin: 24px 0; }
+.subtitle { color: #6b7280; margin: 16px 0; }
+.name { font-size: 2rem; color: #1e3a5f; font-style: italic; margin: 24px 0; }
+.courseName { font-size: 1.5rem; color: #374151; margin: 16px 0; }
+.date { color: #9ca3af; margin-top: 32px; }
+.signature { margin-top: 40px; }
+.signatureLine { width: 200px; border-top: 1px solid #1e3a5f; margin: 0 auto 8px; }
+.signature p { color: #374151; font-weight: 500; }
+.signature span { color: #6b7280; font-size: 0.875rem; }
+.code { color: #9ca3af; font-family: monospace; margin-top: 24px; }
+.actions { display: flex; gap: 16px; justify-content: center; }
+.downloadBtn, .shareBtn { padding: 12px 24px; border-radius: 8px; font-weight: 500; cursor: pointer; }
+.downloadBtn { background: #6366f1; color: #fff; text-decoration: none; }
+.shareBtn { background: #f3f4f6; color: #374151; border: none; }

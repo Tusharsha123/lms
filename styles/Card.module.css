@@ -1,0 +1,54 @@
+.card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.card.hover {
+  cursor: pointer;
+}
+
+.card.hover:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-6px);
+  border-color: var(--primary-light);
+}
+
+.card.hover:hover::before {
+  opacity: 1;
+}
+
+.card.featured {
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+  border-color: var(--primary-light);
+}
+
+.card.featured::before {
+  opacity: 1;
+  background: var(--gradient-secondary);
+}
+
+.card.compact {
+  padding: 1rem;
+}
+
+.card.large {
+  padding: 2rem;
+}

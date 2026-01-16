@@ -1,0 +1,7 @@
+.form { display: flex; flex-direction: column; gap: 20px; }
+.ratingSection { display: flex; flex-direction: column; gap: 8px; }
+.ratingSection label { font-weight: 500; color: #374151; }
+.commentSection { display: flex; flex-direction: column; gap: 8px; }
+.commentSection label { font-weight: 500; color: #374151; }
+.commentSection textarea { padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; resize: vertical; font-family: inherit; }
+.commentSection textarea:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }

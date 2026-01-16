@@ -1,0 +1,14 @@
+.main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.table { width: 100%; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; border-collapse: collapse; overflow: hidden; }
+.table th, .table td { padding: 16px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+.table th { background: #f9fafb; font-weight: 600; color: #6b7280; font-size: 0.875rem; }
+.table code { background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-family: monospace; }
+.active { color: #10b981; font-weight: 500; }
+.inactive { color: #ef4444; font-weight: 500; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.codeInput { display: flex; gap: 8px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 500; color: #374151; }
+.field select { padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; }

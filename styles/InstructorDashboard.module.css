@@ -1,0 +1,33 @@
+.main { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.header h1 { font-size: 1.75rem; color: #1f2937; }
+.createBtn { background: #6366f1; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+.grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px; }
+.section { background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; }
+.section h2 { font-size: 1.125rem; margin-bottom: 16px; color: #374151; }
+.courseList { display: flex; flex-direction: column; gap: 12px; }
+.courseItem { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #f9fafb; border-radius: 8px; }
+.courseInfo h3 { font-size: 1rem; color: #1f2937; margin-bottom: 4px; }
+.courseMeta { display: flex; gap: 12px; font-size: 0.75rem; color: #6b7280; }
+.courseActions { display: flex; gap: 8px; }
+.courseActions a { color: #6366f1; font-size: 0.875rem; text-decoration: none; }
+.viewAll { display: block; text-align: center; margin-top: 16px; color: #6366f1; text-decoration: none; font-size: 0.875rem; }
+.enrollmentList { display: flex; flex-direction: column; gap: 12px; }
+.enrollmentItem { display: flex; align-items: center; gap: 12px; padding: 8px; }
+.studentInfo { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.avatarPlaceholder { width: 36px; height: 36px; border-radius: 50%; background: #6366f1; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.studentName { font-weight: 500; color: #1f2937; font-size: 0.875rem; }
+.courseName { font-size: 0.75rem; color: #6b7280; }
+.reviewList { display: flex; flex-direction: column; gap: 12px; }
+.reviewItem { padding: 12px; background: #f9fafb; border-radius: 8px; }
+.reviewHeader { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.reviewerName { font-weight: 500; font-size: 0.875rem; }
+.reviewRating { font-size: 0.875rem; }
+.reviewCourse { font-size: 0.75rem; color: #6b7280; }
+.reviewComment { font-style: italic; color: #4b5563; font-size: 0.875rem; margin-top: 4px; }
+.quickLinks { display: flex; gap: 16px; flex-wrap: wrap; }
+.quickLink { display: flex; align-items: center; gap: 8px; padding: 16px 24px; background: #fff; border-radius: 8px; border: 1px solid #e5e7eb; text-decoration: none; color: #374151; font-weight: 500; }
+.quickLink:hover { border-color: #6366f1; }
+@media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } .grid { grid-template-columns: 1fr; } }

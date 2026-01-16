@@ -1,0 +1,78 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.enrollmentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.enrollmentCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.enrollmentCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.enrollmentCard p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--light);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.3s;
+}
+
+.progress {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.cardActions {
+  margin-top: auto;
+}
+
+.noCourses {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray);
+}
+
+.noCourses p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .enrollmentsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+.card { display: flex; gap: 20px; padding: 20px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; align-items: center; }
+.icon { font-size: 3rem; }
+.content { flex: 1; }
+.courseTitle { font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+.instructor { color: #6b7280; font-size: 0.875rem; margin-bottom: 4px; }
+.date { color: #9ca3af; font-size: 0.875rem; }
+.code { color: #6366f1; font-family: monospace; font-size: 0.75rem; margin-top: 8px; }
+.actions { display: flex; flex-direction: column; gap: 8px; }
+.viewBtn, .downloadBtn { padding: 8px 16px; border-radius: 6px; text-decoration: none; text-align: center; font-size: 0.875rem; }
+.viewBtn { background: #6366f1; color: #fff; }
+.downloadBtn { background: #f3f4f6; color: #374151; }

@@ -1,0 +1,335 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  hashedPassword String?
+  image         String?
+  role          String    @default("student") // student, instructor, admin
+  bio           String?
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts          Account[]
+  sessions          Session[]
+  profile           Profile?
+  enrollments       Enrollment[]
+  courses           Course[]
+  submissions       Submission[]
+  notifications     Notification[]
+  passwordResets    PasswordReset[]
+  reviews           Review[]
+  wishlist          Wishlist[]
+  certificates      Certificate[]
+  achievements      Achievement[]
+  emailVerificationTokens EmailVerificationToken[]
+  lessonProgress    LessonProgress[]
+  discussions       Discussion[]
+  discussionReplies DiscussionReply[]
+  orders            Order[]
+  payouts           Payout[]
+  sentMessages      Message[]         @relation("SentMessages")
+  receivedMessages  Message[]         @relation("ReceivedMessages")
+  stripeAccountId   String?
+}
+
+model Profile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  bio           String?
+  avatar        String?
+  phone         String?
+  location      String?
+  skills        String?
+  education     String?
+  experience    String?
+  socialLinks   String?
+  preferences   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  thumbnail   String?
+  level       String   @default("beginner") // beginner, intermediate, advanced
+  category    String
+  instructorId String
+  instructor  User     @relation(fields: [instructorId], references: [id])
+  duration    Int? // in hours
+  price       Float    @default(0)
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  lessons      Lesson[]
+  enrollments  Enrollment[]
+  reviews      Review[]
+  wishlists    Wishlist[]
+  certificates Certificate[]
+  discussions  Discussion[]
+  orders       Order[]
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  content     String
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  order       Int
+  videoUrl    String?
+  codeTemplate String?
+  testCases   String?
+  duration    Int? // in minutes
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  submissions    Submission[]
+  lessonProgress LessonProgress[]
+  discussions    Discussion[]
+
+  @@unique([courseId, order])
+}
+
+model Enrollment {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress  Int      @default(0) // percentage 0-100
+  status    String   @default("active") // active, completed, paused
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, courseId])
+}
+
+model Submission {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  code      String
+  passed    Boolean  @default(false)
+  result    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model EmailVerificationToken {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+// ==================== NEW MARKETPLACE MODELS ====================
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int      // 1-5
+  comment   String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, courseId])
+}
+
+model Wishlist {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, courseId])
+}
+
+model Coupon {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  discountPercent Int
+  maxUses         Int?
+  usedCount       Int       @default(0)
+  expiresAt       DateTime?
+  courseId        String?   // null = applies to any course
+  isActive        Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+}
+
+model Certificate {
+  id             String   @id @default(cuid())
+  uniqueCode     String   @unique
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId       String
+  course         Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  issuedAt       DateTime @default(now())
+  certificateUrl String?
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        String   // e.g., "first_course", "streak_7", "top_performer"
+  title       String
+  description String?
+  icon        String?
+  earnedAt    DateTime @default(now())
+}
+
+model LessonProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  completed   Boolean   @default(false)
+  timeSpent   Int       @default(0) // in seconds
+  completedAt DateTime?
+
+  @@unique([userId, lessonId])
+}
+
+model Discussion {
+  id         String   @id @default(cuid())
+  courseId   String
+  course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId   String?
+  lesson     Lesson?  @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title      String
+  content    String
+  isPinned   Boolean  @default(false)
+  isResolved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  replies DiscussionReply[]
+}
+
+model DiscussionReply {
+  id              String     @id @default(cuid())
+  discussionId    String
+  discussion      Discussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  content         String
+  isInstructorReply Boolean  @default(false)
+  isAnswer        Boolean    @default(false)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}
+
+model Order {
+  id                    String   @id @default(cuid())
+  userId                String
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId              String
+  course                Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  amount                Float
+  currency              String   @default("usd")
+  status                String   @default("pending") // pending, completed, refunded, failed
+  stripePaymentIntentId String?
+  stripeSessionId       String?
+  couponId              String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model Payout {
+  id            String   @id @default(cuid())
+  instructorId  String
+  instructor    User     @relation(fields: [instructorId], references: [id], onDelete: Cascade)
+  amount        Float
+  currency      String   @default("usd")
+  status        String   @default("pending") // pending, processing, completed, failed
+  stripePayoutId String?
+  periodStart   DateTime
+  periodEnd     DateTime
+  createdAt     DateTime @default(now())
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  senderId   String
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId String
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  subject    String?
+  content    String
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}

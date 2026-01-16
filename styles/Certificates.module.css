@@ -1,0 +1,7 @@
+.main { max-width: 900px; margin: 0 auto; padding: 24px; }
+.main h1 { font-size: 1.75rem; color: #1f2937; margin-bottom: 24px; }
+.empty { text-align: center; padding: 64px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; }
+.emptyIcon { font-size: 4rem; margin-bottom: 16px; }
+.empty h2 { color: #1f2937; margin-bottom: 8px; }
+.empty p { color: #6b7280; }
+.grid { display: flex; flex-direction: column; gap: 16px; }
