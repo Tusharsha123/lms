@@ -100,7 +100,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === "POST") {
-      // Generate new recommendations based on user activity
+      // Refresh recommendations by deleting old ones and triggering regeneration
       const { forceRefresh = false } = req.body;
 
       if (forceRefresh) {
@@ -108,11 +108,17 @@ export default async function handler(req, res) {
         await prisma.courseRecommendation.deleteMany({
           where: { userId: session.user.id },
         });
+        
+        // Note: This triggers regeneration on the next GET request
+        return res.status(200).json({ 
+          message: "Recommendations cleared. They will be regenerated on your next visit.",
+          cleared: true 
+        });
       }
 
-      // Trigger recommendation generation
-      // This would call the AI recommendation engine
-      return res.status(200).json({ message: "Recommendations generated" });
+      return res.status(400).json({ 
+        error: "No action specified. Set forceRefresh=true to regenerate recommendations." 
+      });
     }
 
     res.status(405).json({ error: "Method not allowed" });

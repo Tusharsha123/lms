@@ -83,6 +83,12 @@ export default async function handler(req, res) {
     });
 
     // TODO: Send notification email to company/admin
+    // This should be implemented using the email service configured in .env
+    // Example: await sendEmail({
+    //   to: internship.company.email,
+    //   subject: 'New Application Received',
+    //   body: `New application from ${session.user.name} for ${internship.title}`
+    // });
 
     return res.status(201).json({
       message: "Application submitted successfully",

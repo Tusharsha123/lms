@@ -71,7 +71,7 @@ async function main() {
   const companyCount = await prisma.company.count();
   if (companyCount === 0) {
     console.log("Seeding companies...");
-    const companies = await prisma.company.createMany({
+    const result = await prisma.company.createMany({
       data: [
         {
           name: "TechCorp",
@@ -105,7 +105,7 @@ async function main() {
         },
       ],
     });
-    console.log(`Created ${companies.count} companies`);
+    console.log(`Created ${result.count} companies`);
   }
 
   // Seed Internships
@@ -114,7 +114,7 @@ async function main() {
     console.log("Seeding internships...");
     const allCompanies = await prisma.company.findMany();
     
-    const internships = await prisma.internship.createMany({
+    const result = await prisma.internship.createMany({
       data: [
         {
           companyId: allCompanies[0].id,
@@ -166,14 +166,14 @@ async function main() {
         },
       ],
     });
-    console.log(`Created ${internships.count} internships`);
+    console.log(`Created ${result.count} internships`);
   }
 
   // Seed Mock Tests
   const testCount = await prisma.mockTest.count();
   if (testCount === 0) {
     console.log("Seeding mock tests...");
-    const tests = await prisma.mockTest.createMany({
+    const result = await prisma.mockTest.createMany({
       data: [
         {
           title: "JavaScript Fundamentals",
@@ -221,14 +221,14 @@ async function main() {
         },
       ],
     });
-    console.log(`Created ${tests.count} mock tests`);
+    console.log(`Created ${result.count} mock tests`);
   }
 
   // Seed Workshops
   const workshopCount = await prisma.workshop.count();
   if (workshopCount === 0) {
     console.log("Seeding workshops...");
-    const workshops = await prisma.workshop.createMany({
+    const result = await prisma.workshop.createMany({
       data: [
         {
           title: "Resume Writing Masterclass",
@@ -263,14 +263,14 @@ async function main() {
         },
       ],
     });
-    console.log(`Created ${workshops.count} workshops`);
+    console.log(`Created ${result.count} workshops`);
   }
 
   // Seed Resume Templates
   const templateCount = await prisma.resumeTemplate.count();
   if (templateCount === 0) {
     console.log("Seeding resume templates...");
-    const templates = await prisma.resumeTemplate.createMany({
+    const result = await prisma.resumeTemplate.createMany({
       data: [
         {
           name: "Modern Minimal",
@@ -313,7 +313,7 @@ async function main() {
         },
       ],
     });
-    console.log(`Created ${templates.count} resume templates`);
+    console.log(`Created ${result.count} resume templates`);
   }
 
   console.log("Seeding complete");

@@ -56,10 +56,6 @@ export default async function handler(req, res) {
       case 'views':
         orderBy = { views: 'desc' };
         break;
-      case 'applications':
-        // This would require a count, handled differently
-        orderBy = { createdAt: 'desc' };
-        break;
       case 'recent':
       default:
         orderBy = { createdAt: 'desc' };
